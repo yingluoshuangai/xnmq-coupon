@@ -1,0 +1,19 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /coupon-template
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: eureka-client-coupon-template # 应用名称，在Eureka中会显示
+  jpa:
+    show-sql: true # jpa 展示sql
+    hibernate:
+      ddl-auto: none # 不自动根据实体类修改表结构
+    properties:
+      hibernate.show_sql: true
+      hibernate.format_sql: true
+    open-in-view: false
+

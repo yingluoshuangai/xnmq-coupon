@@ -1,4 +1,4 @@
-package xyz.xnmq.coupon.enums;
+package xyz.xnmq.coupon.constant;
 
 /**
  * @Created xnmq

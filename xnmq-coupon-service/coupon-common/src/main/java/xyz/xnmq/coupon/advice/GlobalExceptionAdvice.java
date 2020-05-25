@@ -2,7 +2,7 @@ package xyz.xnmq.coupon.advice;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import xyz.xnmq.coupon.enums.ExceptionEnum;
+import xyz.xnmq.coupon.constant.ExceptionEnum;
 import xyz.xnmq.coupon.exception.CouponCommonException;
 import xyz.xnmq.coupon.vo.CommonResponse;
 
