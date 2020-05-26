@@ -1,5 +1,6 @@
 package xyz.xnmq.coupon.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import xyz.xnmq.coupon.converter.CouponCategoryConverter;
 import xyz.xnmq.coupon.converter.DistributeTargetConverter;
 import xyz.xnmq.coupon.converter.ProductLineConverter;
 import xyz.xnmq.coupon.converter.TemplateRuleConverter;
+import xyz.xnmq.coupon.serialization.CouponTemplateSerialize;
 import xyz.xnmq.coupon.vo.TemplateRule;
 
 import javax.persistence.*;
@@ -31,13 +33,14 @@ import java.util.Date;
 @Entity
 @Table(name = "coupon_template")
 @EntityListeners(AuditingEntityListener.class) // 实体类监听器， 在新增或修改时自动塞值
+@JsonSerialize(using = CouponTemplateSerialize.class) // 自定义序列化器
 public class CouponTemplate implements Serializable {
 
     /** 自增主键*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false) // 字段名为id， 不允许为空
-    private Integer id;
+    private Long id;
 
     /** 是否是可用状态*/
     private Boolean available;
