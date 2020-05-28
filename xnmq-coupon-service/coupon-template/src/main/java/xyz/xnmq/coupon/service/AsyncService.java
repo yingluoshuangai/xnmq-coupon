@@ -11,6 +11,7 @@ import xyz.xnmq.coupon.entity.CouponTemplate;
 public interface AsyncService {
     /**
      * 根据模板 异步创建优惠券码
+     * @param template
      */
     void asyncConstructCouponByTemplate(CouponTemplate template);
 }
