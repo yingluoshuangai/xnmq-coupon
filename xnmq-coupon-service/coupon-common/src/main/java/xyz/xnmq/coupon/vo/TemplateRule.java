@@ -31,6 +31,12 @@ public class TemplateRule {
     /** 权重（可以和那些优惠券叠加使用， 同一类的优惠券不能叠加）*/
     private String weight;
 
+    public boolean validate(){
+        return expiration.validate() && discount.validate()
+                && limitation > 0 && usage.validate()
+                && StringUtils.isNotEmpty(weight);
+    }
+
     /**
      * 有效期规则
      */
@@ -87,11 +93,8 @@ public class TemplateRule {
          * 当优惠券类型为 满减卷，基准不能小于0
          * @return
          */
-        boolean validate(String code){
-            if(CouponCategory.of(code).equals(CouponCategory.MANJIAN) && base < 0){
-               return false;
-            }
-            return true;
+        boolean validate(){
+            return quota > 0 && base > 0;
         }
     }
 
