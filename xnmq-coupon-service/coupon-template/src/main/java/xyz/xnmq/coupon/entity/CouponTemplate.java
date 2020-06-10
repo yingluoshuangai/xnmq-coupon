@@ -45,7 +45,7 @@ public class CouponTemplate implements Serializable {
     /** 是否是可用状态*/
     private Boolean available;
 
-    /** 是否过期*/
+    /** 是否过期 true 过期 flase 未过期*/
     private Boolean expired;
 
     /** 优惠券名称*/
@@ -91,7 +91,7 @@ public class CouponTemplate implements Serializable {
     /**
      * 生成优惠券模板
      * */
-    public CouponTemplate(Boolean available, Boolean expired, String name, String logo,
+    public CouponTemplate(String name, String logo,
                           String desc, String category, Integer productLine, Integer count,
                           Long userId, Integer target, TemplateRule rule) {
         this.available = false;

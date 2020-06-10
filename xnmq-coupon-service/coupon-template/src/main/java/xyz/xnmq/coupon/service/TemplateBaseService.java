@@ -3,6 +3,7 @@ package xyz.xnmq.coupon.service;
 import xyz.xnmq.coupon.entity.CouponTemplate;
 import xyz.xnmq.coupon.exception.CouponCommonException;
 import xyz.xnmq.coupon.vo.CouponTemplateSDK;
+import xyz.xnmq.coupon.vo.CouponTemplateVO;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -37,4 +38,18 @@ public interface TemplateBaseService {
      * @return
      */
     Map<Long, CouponTemplateSDK> findIdsToTemplateSDK(Collection<Long> ids);
+
+    /**
+     * vo 转为 实体CouponTemplate
+     * @param vo
+     * @return
+     */
+    CouponTemplate voToTemplate(CouponTemplateVO vo);
+
+    /**
+     * 实体类CouponTemplate 转为 SDK
+     * @param template
+     * @return
+     */
+    CouponTemplateSDK templateToSdk(CouponTemplate template);
 }
